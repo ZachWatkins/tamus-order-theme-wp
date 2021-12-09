@@ -19,6 +19,11 @@ return [
 			'config'      => [
 				'dependencies'     => [
 					[
+						'name'       => __( 'Workstation Ordering', 'cla-wsorder' ),
+						'slug'       => 'cla-workstation-order/cla-workstation-order.php',
+						'public_url' => 'https://github.com/zachwatkins/cla-workstation-order/',
+					],
+					[
 						'name'       => __( 'Advanced Custom Fields', 'cla-wsorder' ),
 						'slug'       => 'advanced-custom-fields/acf.php',
 						'public_url' => 'https://wordpress.org/plugins/advanced-custom-fields/',
