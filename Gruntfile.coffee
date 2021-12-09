@@ -26,7 +26,6 @@ module.exports = (grunt) ->
           failOnError: true
         files:
           'style.css': 'style.css'
-          'css/admin.css': 'css/admin.css'
       dev:
         options:
           map: true
@@ -36,20 +35,6 @@ module.exports = (grunt) ->
           failOnError: true
         files:
           'style.css': 'style.css'
-          'css/admin.css': 'css/admin.css'
-    merge_media:
-      pkg:
-        options:
-          compress: true
-        files:
-          'style.css': 'style.css'
-          'css/admin.css': 'css/admin.css'
-      dev:
-        options:
-          compress: false
-        files:
-          'style.css': 'style.css'
-          'css/admin.css': 'css/admin.css'
     sass:
       pkg:
         options:
@@ -60,7 +45,6 @@ module.exports = (grunt) ->
           includePaths: ['node_modules/foundation-sites/scss']
         files:
           'style.css': 'css/src/style.scss'
-          'css/admin.css': 'css/src/admin.scss'
       dev:
         options:
           implementation: sass
@@ -70,7 +54,6 @@ module.exports = (grunt) ->
           includePaths: ['node_modules/foundation-sites/scss']
         files:
           'style.css': 'css/src/style.scss'
-          'css/admin.css': 'css/src/admin.scss'
     sasslint:
       options:
         configFile: '.sass-lint.yml'
@@ -97,10 +80,10 @@ module.exports = (grunt) ->
   @loadNpmTasks 'grunt-sass-lint'
   @loadNpmTasks 'grunt-sass'
   @loadNpmTasks 'grunt-postcss'
-  @loadNpmTasks 'grunt-merge-media'
 
-  @registerTask 'default', ['themecomment', 'sasslint', 'sass:pkg', 'merge_media:pkg', 'postcss:pkg']
-  @registerTask 'develop', ['themecomment', 'sasslint', 'sass:dev', 'merge_media:dev']
+  @registerTask 'default', ['themecomment', 'sasslint', 'sass:pkg', 'postcss:pkg']
+  @registerTask 'develop', ['themecomment', 'sasslint', 'sass:dev']
+  @registerTask 'test', ['sasslint']
   @registerTask 'release', ['compress', 'makerelease']
   @registerTask 'makerelease', 'Set release branch for use in the release task', ->
     done = @async()

@@ -32,6 +32,7 @@ A GNU GPL 2.0 (or later) WordPress Theme to facilitate product ordering within a
 
 # Developer Notes
 
+To get started, download the repository and run `npm start` on Mac and Linux, or `npm run windows-start` on Windows. This will set up the repository for full use "out-of-the-box". For more command line tools see the section below titled **Command Line Tasks**.
 ## Frameworks and Libraries
 
 It relies on Advanced Custom Fields Pro for ease of implementation and modification of data relationships for users and developers. It uses ACF hooks to trigger custom actions when ACF fields are updated.
