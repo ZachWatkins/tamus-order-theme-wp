@@ -10,178 +10,61 @@
  * @link    https://www.studiopress.com/
  */
 
-// Generate department posts.
-$departments       = include __DIR__ . '/department/dept-data.php';
-$dept_posts        = array();
-$dept_post_default = [
-	'post_title'     => 'Political Science',
-	'post_content'   => '',
-	'post_type'      => 'department',
-	'post_status'    => 'publish',
-	'comment_status' => 'closed',
-	'ping_status'    => 'closed',
-	'meta_input'     => [
-		'abbreviation'  => 'POLS',
-		'_abbreviation' => 'field_6000774e10970',
-	],
-];
-
-foreach ( $departments as $department ) {
-	$dept_post                               = $dept_post_default;
-	$dept_post['post_title']                 = $department['label'];
-	$dept_post['meta_input']['abbreviation'] = $department['abbreviation'];
-	$dept_posts[]                            = $dept_post;
-}
-
-// Declare all posts.
-$all_posts = [
-	'homepage'   => [
-		'post_title'     => 'Home',
-		'post_content'   => require dirname( __FILE__ ) . '/import/content/home.php',
-		'post_type'      => 'page',
-		'post_status'    => 'publish',
-		'page_template'  => 'page-templates/page-home.php',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-	],
-	'example-program' => [
-		'post_title'     => 'Staff 2022',
-		'post_content'   => '',
-		'post_type'      => 'program',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-		'meta_input'     => [
-			'prefix'       => 'S-FY22',
-			'_prefix'      => 'field_5fff77faa4987',
-			'allocation'   => '1500',
-			'_allocation'  => 'field_5fff7813a4988',
-			'threshold'    => '1505',
-			'_threshold'   => 'field_5fff781da4989',
-			'fiscal_year'  => '2022',
-			'_fiscal_year' => 'field_6006f98dc985f',
-		]
-	],
-	'self-funded-program' => [
-		'post_title'     => 'Self-funded 2022',
-		'post_content'   => '',
-		'post_type'      => 'program',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-		'meta_input'     => [
-			'prefix'       => 'SF-FY22',
-			'_prefix'      => 'field_5fff77faa4987',
-			'allocation'   => '0',
-			'_allocation'  => 'field_5fff7813a4988',
-			'threshold'    => '0',
-			'_threshold'   => 'field_5fff781da4989',
-			'fiscal_year'  => '2022',
-			'_fiscal_year' => 'field_6006f98dc985f',
-		]
-	],
-	'order-form' => [
-		'post_title'     => 'Order Form',
-		'post_content'   => '',
-		'post_type'      => 'page',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-		'meta_input'     => [
-			'_wp_page_template' => 'order-form-template.php',
-		],
-	],
-	'catalog'    => [
-		'post_title'     => 'Catalog',
-		'post_content'   => '',
-		'post_type'      => 'page',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-		'meta_input'     => [
-			'_wp_page_template' => 'catalog.php',
-		],
-	],
-	'orders'     => [
-		'post_title'     => 'Orders',
-		'post_content'   => '',
-		'post_type'      => 'page',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-		'meta_input'     => [
-			'_wp_page_template' => 'orders.php',
-		],
-	],
-	'my-account' => [
-		'post_title'     => 'My Account',
-		'post_content'   => '',
-		'post_type'      => 'page',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-		'meta_input'     => [
-			'_wp_page_template' => 'my-account.php',
-		],
-	],
-	'my-orders'  => [
-		'post_title'     => 'My Orders',
-		'post_content'   => '',
-		'post_type'      => 'page',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'ping_status'    => 'closed',
-		'meta_input'     => [
-			'_wp_page_template' => 'my-orders.php',
-		],
-	],
-];
-
 return [
-	'plugins' => [
-		[
-			'name'       => __( 'Workstation Order', 'tamus-order' ),
-			'slug'       => 'tamus-order-plugin-wp/tamus-order-plugin-wp.php',
-			'public_url' => 'https://github.com/zachwatkins/tamus-order-plugin-wp/',
-		],
-		[
-			'name'       => __( 'Advanced Custom Fields', 'tamus-order' ),
-			'slug'       => 'advanced-custom-fields/acf.php',
-			'public_url' => 'https://wordpress.org/plugins/advanced-custom-fields/',
-		],
-		[
-			'name'       => __( 'Post SMTP', 'tamus-order' ),
-			'slug'       => 'post-smtp/postman-smtp.php',
-			'public_url' => 'https://wordpress.org/plugins/post-smtp/',
-		],
-		[
-			'name'       => __( 'User Switching', 'tamus-order' ),
-			'slug'       => 'user-switching/user-switching.php',
-			'public_url' => 'https://wordpress.org/plugins/user-switching/',
-		],
-		[
-			'name'       => __( 'Simple History', 'tamus-order' ),
-			'slug'       => 'simple-history/index.php',
-			'public_url' => 'https://wordpress.org/plugins/simple-history/',
-		],
-		[
-			'name'       => __( 'Yoast Duplicate Post', 'tamus-order' ),
-			'slug'       => 'duplicate-post/duplicate-post.php',
-			'public_url' => 'https://wordpress.org/plugins/duplicate-post/',
-		],
-		[
-			'name'       => __( 'OneLogin SAML SSO', 'tamus-order' ),
-			'slug'       => 'onelogin-saml-sso/onelogin_saml.php',
-			'public_url' => 'https://wordpress.org/plugins/onelogin-saml-sso/',
-		],
-	],
-	'content'          => $all_posts,
-	'navigation_menus' => [
-		'primary' => [
-			'homepage'   => [
-				'title' => 'Home',
+	'starter_packs' => [
+		'demo-1' => [
+			'title'       => __( 'Demo 1', 'tamus-order-theme-wp' ),
+			'description' => __( 'Demonstration content for the application.', 'tamus-order-theme-wp' ),
+			'thumbnail'   => get_stylesheet_directory_uri() . '/config/import/images/thumbnails/demo-1.jpg',
+			'demo_url'    => 'https://github.com/zachwatkins/tamus-order-theme-wp/',
+			'config'      => [
+				'dependencies' => [
+					[
+						'name'       => __( 'Workstation Order', 'tamus-order-theme-wp' ),
+						'slug'       => 'tamus-order-plugin-wp/tamus-order-plugin-wp.php',
+						'public_url' => 'https://github.com/zachwatkins/tamus-order-plugin-wp/',
+					],
+					[
+						'name'       => __( 'Advanced Custom Fields', 'tamus-order-theme-wp' ),
+						'slug'       => 'advanced-custom-fields/acf.php',
+						'public_url' => 'https://wordpress.org/plugins/advanced-custom-fields/',
+					],
+					[
+						'name'       => __( 'Post SMTP', 'tamus-order-theme-wp' ),
+						'slug'       => 'post-smtp/postman-smtp.php',
+						'public_url' => 'https://wordpress.org/plugins/post-smtp/',
+					],
+					[
+						'name'       => __( 'User Switching', 'tamus-order-theme-wp' ),
+						'slug'       => 'user-switching/user-switching.php',
+						'public_url' => 'https://wordpress.org/plugins/user-switching/',
+					],
+					[
+						'name'       => __( 'Simple History', 'tamus-order-theme-wp' ),
+						'slug'       => 'simple-history/index.php',
+						'public_url' => 'https://wordpress.org/plugins/simple-history/',
+					],
+					[
+						'name'       => __( 'Yoast Duplicate Post', 'tamus-order-theme-wp' ),
+						'slug'       => 'duplicate-post/duplicate-post.php',
+						'public_url' => 'https://wordpress.org/plugins/duplicate-post/',
+					],
+					[
+						'name'       => __( 'OneLogin SAML SSO', 'tamus-order-theme-wp' ),
+						'slug'       => 'onelogin-saml-sso/onelogin_saml.php',
+						'public_url' => 'https://wordpress.org/plugins/onelogin-saml-sso/',
+					],
+				],
+				'content'          => require __DIR__ . '/import/content/posts.php',
+				'navigation_menus' => [
+					'primary' => [
+						'homepage'   => [
+							'title' => 'Home',
+						],
+					],
+				],
+				'widgets'          => [],
 			],
 		],
 	],
-	'widgets'          => [],
 ];
