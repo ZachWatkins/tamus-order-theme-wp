@@ -1,6 +1,6 @@
 <?php
 
-namespace CLA_WSOrder;
+namespace TAMUS\Order\Theme;
 
 class Header {
 

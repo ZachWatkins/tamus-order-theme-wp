@@ -1,5 +1,5 @@
 {
-  "name": "cla-wsorder",
+  "name": "tamus-order",
   "version": "1.0.0",
   "description": "Genesis child theme for the College of Liberal Arts Workstation Ordering Application",
   "main": "functions.php",
@@ -15,7 +15,7 @@
   "author": "Zachary Watkins",
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.tamu.edu/liberalarts-web/cla-wsorder/issues",
+    "url": "https://github.com/zachwatkins/tamus-order/issues",
     "email": "zwatkins2@tamu.edu"
   },
   "dependencies": {
@@ -41,9 +41,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.tamu.edu/liberalarts-web/cla-wsorder.git"
+    "url": "https://github.com/zachwatkins/tamus-order"
   },
-  "homepage": "https://github.tamu.edu/liberalarts-web/cla-wsorder#readme",
+  "homepage": "https://github.com/zachwatkins/tamus-order#readme",
   "org_clait": {
     "themename": "CLA Workstation Ordering Application",
     "authoruri": "https://liberalarts.tamu.edu/",

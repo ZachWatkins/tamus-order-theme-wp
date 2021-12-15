@@ -11,7 +11,7 @@
  * @subpackage Page Templates
  * @author     Zachary Watkins <zwatkins2@tamu.edu>
  * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @link       https://github.com/ZachWatkins/cla-wsorder/tree/master/page-templates/page-my-account.php
+ * @link       https://github.com/ZachWatkins/tamus-order/tree/master/page-templates/page-my-account.php
  */
 
 /**
@@ -43,18 +43,18 @@ function cla_workstation_order_account_scripts() {
 	}
 
 	wp_register_script(
-		'cla-workstation-order-account-scripts',
+		'tamus-order-plugin-wp-account-scripts',
 		CLA_THEME_DIRURL . '/js/update-account.js',
 		array('jquery'),
 		filemtime( CLA_THEME_DIRPATH . '/js/update-account.js' ),
 		true
 	);
 
-	wp_enqueue_script( 'cla-workstation-order-account-scripts' );
+	wp_enqueue_script( 'tamus-order-plugin-wp-account-scripts' );
 	// Include admin ajax URL and nonce.
 	$script_variables = 'var WSOAjax = {"ajaxurl":"'.admin_url('admin-ajax.php').'","nonce":"'.wp_create_nonce('update_account').'"};';
 
-	wp_add_inline_script( 'cla-workstation-order-account-scripts', $script_variables, 'before' );
+	wp_add_inline_script( 'tamus-order-plugin-wp-account-scripts', $script_variables, 'before' );
 
 }
 add_action( 'wp_enqueue_scripts', 'cla_workstation_order_account_scripts', 1 );

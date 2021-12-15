@@ -12,14 +12,14 @@ A GNU GPL 2.0 (or later) WordPress Theme to facilitate product ordering within a
 
 ## WordPress Requirements
 
-1. Single site install
+1. WordPress 5.4+ Single site install
 2. [Genesis Framework - WordPress Theme](https://www.studiopress.com/themes/genesis/)
-3. Workstation Ordering Application Plugin
-    a. <https://github.tamu.edu/liberalarts-web/cla-workstation-order>
-    b. <https://github.com/tamulibarts/cla-workstation-order>
-4. WSOrder WordPress Child Theme
-    a. <https://github.tamu.edu/liberalarts-web/cla-wsorder>
-    b. <https://github.com/tamulibarts/cla-wsorder>
+3. TAMUS Ordering Application Plugin
+    a. <https://github.com/zachwatkins/tamus-order-plugin-wp>
+    b. <https://github.com/tamulibarts/tamus-order-plugin-wp>
+4. TAMUS Ordering Application Genesis Child Theme
+    a. <https://github.com/zachwatkins/tamus-order>
+    b. <https://github.com/tamulibarts/tamus-order>
 4. [Advanced Custom Fields Pro Plugin](https://www.advancedcustomfields.com/pro/)
 
 ## WordPress Recommendations
@@ -76,7 +76,7 @@ Links to resources:
 9. `$ grunt` - Compile SASS files into compressed, production-ready CSS files.
 10. `$ grunt develop` - Compile SASS files into expanded, sourcemapped CSS files.
 11. `$ grunt watch` - Continuously watch SASS files for changes and compile them into expanded, sourcemapped CSS files every time they are saved.
-12. `$ grunt compress` - Create a compressed package file named `cla-workstation-order.zip` that can be uploaded to your WordPress website's plugin dashboard.
+12. `$ grunt compress` - Create a compressed package file named `tamus-order-plugin-wp.zip` that can be uploaded to your WordPress website's plugin dashboard.
 
 ## To Do
 
@@ -98,7 +98,7 @@ On two different models of Dell Windows 10 machines (Inspiron and Latitude) a Wi
 1. The WordPress plugin was programmed by Zachary Watkins <zwatkins2@tamu.edu> <https://github.com/zachwatkins>.
 2. The WordPress theme was programmed by Zachary Watkins.
 3. The business process workflow and a portion of the UI specifications were designed by Pamela Luckenbill.
-4. The original application used very different technology, was programmed by Joseph Rafferty <jrafferty@tamu.edu>, and was authored by Joseph Rafferty and Pamela Luckenbill: [https://github.tamu.edu/liberalarts-web/workstation-order](https://github.tamu.edu/liberalarts-web/workstation-order).
+4. The original application used very different technology, was programmed by Joseph Rafferty <jrafferty@tamu.edu>, and was authored by Joseph Rafferty and Pamela Luckenbill: [https://github.com/zachwatkins/workstation-order](https://github.com/zachwatkins/workstation-order).
 5. The majority of the workflow requirements for this version were preserved from the original application. However, the product, bundle, program, and department data creation and management interface is superseded by this application as it is provided by WordPress Core.
 6. The visual design at the start of the project was copied from the original application, and then the icons were replaced.
 

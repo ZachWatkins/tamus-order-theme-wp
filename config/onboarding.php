@@ -140,37 +140,37 @@ $all_posts = [
 return [
 	'plugins' => [
 		[
-			'name'       => __( 'Workstation Order', 'cla-wsorder' ),
-			'slug'       => 'cla-workstation-order/cla-workstation-order.php',
-			'public_url' => 'https://github.com/zachwatkins/cla-workstation-order/',
+			'name'       => __( 'Workstation Order', 'tamus-order' ),
+			'slug'       => 'tamus-order-plugin-wp/tamus-order-plugin-wp.php',
+			'public_url' => 'https://github.com/zachwatkins/tamus-order-plugin-wp/',
 		],
 		[
-			'name'       => __( 'Advanced Custom Fields', 'cla-wsorder' ),
+			'name'       => __( 'Advanced Custom Fields', 'tamus-order' ),
 			'slug'       => 'advanced-custom-fields/acf.php',
 			'public_url' => 'https://wordpress.org/plugins/advanced-custom-fields/',
 		],
 		[
-			'name'       => __( 'Post SMTP', 'cla-wsorder' ),
+			'name'       => __( 'Post SMTP', 'tamus-order' ),
 			'slug'       => 'post-smtp/postman-smtp.php',
 			'public_url' => 'https://wordpress.org/plugins/post-smtp/',
 		],
 		[
-			'name'       => __( 'User Switching', 'cla-wsorder' ),
+			'name'       => __( 'User Switching', 'tamus-order' ),
 			'slug'       => 'user-switching/user-switching.php',
 			'public_url' => 'https://wordpress.org/plugins/user-switching/',
 		],
 		[
-			'name'       => __( 'Simple History', 'cla-wsorder' ),
+			'name'       => __( 'Simple History', 'tamus-order' ),
 			'slug'       => 'simple-history/index.php',
 			'public_url' => 'https://wordpress.org/plugins/simple-history/',
 		],
 		[
-			'name'       => __( 'Yoast Duplicate Post', 'cla-wsorder' ),
+			'name'       => __( 'Yoast Duplicate Post', 'tamus-order' ),
 			'slug'       => 'duplicate-post/duplicate-post.php',
 			'public_url' => 'https://wordpress.org/plugins/duplicate-post/',
 		],
 		[
-			'name'       => __( 'OneLogin SAML SSO', 'cla-wsorder' ),
+			'name'       => __( 'OneLogin SAML SSO', 'tamus-order' ),
 			'slug'       => 'onelogin-saml-sso/onelogin_saml.php',
 			'public_url' => 'https://wordpress.org/plugins/onelogin-saml-sso/',
 		],

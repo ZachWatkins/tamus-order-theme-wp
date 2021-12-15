@@ -2,11 +2,13 @@
 /**
  * The file that defines the core theme class
  *
- * @link       https://https://github.tamu.edu/liberalarts-web/cla-wsorder/blob/master/src/class-cla-wsorder.php
+ * @link       https://https://github.com/zachwatkins/tamus-order/blob/master/src/class-tamus-order.php
  * @since      0.1.0
- * @package    cla-wsorder
- * @subpackage cla-wsorder/src
+ * @package    tamus-order
+ * @subpackage tamus-order/src
  */
+
+ namespace TAMUS\Order;
 
 /**
  * The core plugin class
@@ -14,7 +16,7 @@
  * @since 0.1.0
  * @return void
  */
-class CLA_WSOrder {
+class Theme {
 
 	/**
 	 * File name
@@ -38,17 +40,13 @@ class CLA_WSOrder {
 	 */
 	private function __construct() {
 
-		// Foundation class names and other attributes.
-		include CLA_THEME_DIRPATH . '/src/class-foundation.php';
-		$foundation = new \CLA_WSOrder\Foundation();
-
 		// Navigation menu.
 		include CLA_THEME_DIRPATH . '/src/class-navigation.php';
-		$nav = new \CLA_WSOrder\Navigation();
+		$nav = new \TAMUS\Order\Theme\Navigation();
 
 		// Header.
 		include CLA_THEME_DIRPATH . '/src/class-header.php';
-		$nav = new \CLA_WSOrder\Header();
+		$nav = new \TAMUS\Order\Theme\Header();
 
 		// Run functions after the theme is loaded.
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );

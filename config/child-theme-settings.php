@@ -7,13 +7,13 @@
  * @package Workstation Order
  * @author  Zachary K. Watkins <zwatkins2@tamu.edu> (https://github.com/zachwatkins/)
  * @license GPL-2.0-or-later
- * @link    https://github.com/zachwatkins/cla-wsorder/
+ * @link    https://github.com/zachwatkins/tamus-order/
  */
 
 return [
 	GENESIS_SETTINGS_FIELD                => [
 		'site_layout' => 'full',
-		'footer_text' => '&copy; Texas A&M University System.'
+		'footer_text' => '[footer_copyright before="Copyright "] · CLA Workstation Ordering Application <a href="https://github.com/zachwatkins/tamus-order">Theme</a> and <a href="https://github.com/zachwatkins/tamus-order-plugin-wp">Plugin</a> on [footer_genesis_link url="https://www.studiopress.com/" before=""] · [footer_wordpress_link]'
 	],
 	'posts_per_page'                      => 6,
 	'blogdescription'                     => '',
@@ -29,5 +29,5 @@ return [
 	'options_enable_emails_to_logistics'  => '1',
 	'_options_enable_emails_to_logistics' => 'field_601da63a35bff',
 	'duplicate_post_types_enabled'        => 'a:4:{i:0;s:7:"product";i:1;s:6:"bundle";i:2;s:7:"program";i:3;s:10:"department";}',
-	'duplicate_post_roles'                => 'a:4:{i:0;s:13:"administrator";i:1;s:9:"wso_admin";i:2;s:13:"wso_logistics";i:3;s:19:"wso_logistics_admin";}',
+	'duplicate_post_roles'                => 'a:4:{i:0;s:13:"administrator";i:1;s:9:"wso_admin";i:2;s:13:"logistics";i:3;s:19:"logistics_admin";}',
 ];

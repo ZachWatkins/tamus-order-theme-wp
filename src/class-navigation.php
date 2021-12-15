@@ -1,6 +1,6 @@
 <?php
 
-namespace CLA_WSOrder;
+namespace TAMUS\Order\Theme;
 
 class Navigation {
 	public function __construct(){
@@ -8,8 +8,8 @@ class Navigation {
 		if (
 			current_user_can( 'wso_it_rep' )
 			|| current_user_can( 'wso_business_admin' )
-			|| current_user_can( 'wso_logistics_admin' )
-			|| current_user_can( 'wso_logistics' )
+			|| current_user_can( 'logistics_admin' )
+			|| current_user_can( 'logistics' )
 			|| current_user_can( 'wso_admin' )
 		) {
 			add_filter( 'genesis_nav_items', array( $this, 'genesis_add_nav_menu_items' ), 10, 2 );
@@ -34,17 +34,17 @@ class Navigation {
 
 		if ( 'primary' === $args['theme_location'] ) {
 			$current_program_id = get_site_option( 'options_current_program' );
-			$orders_url         = admin_url( "edit.php?post_type=wsorder&program=$current_program_id" );
+			$orders_url         = admin_url( "edit.php?post_type=tamusorder&program=$current_program_id" );
 			$menu_title         = "<li class=\"brand\">Administrative Functions</li>";
 			$output             = "<li><a href=\"/orders/\">Orders</a></li>";
-			if ( current_user_can( 'wso_admin' ) || current_user_can( 'wso_logistics' ) || current_user_can( 'wso_logistics_admin' ) ) {
+			if ( current_user_can( 'wso_admin' ) || current_user_can( 'logistics' ) || current_user_can( 'logistics_admin' ) ) {
 				$bundles_url     = admin_url( 'edit.php?post_type=bundle' );
 				$categories_url  = admin_url( 'edit-tags.php?taxonomy=product-category' );
 				$products_url    = admin_url( 'edit.php?post_type=product' );
 				$departments_url = admin_url( 'edit.php?post_type=department' );
 				$users_url       = admin_url( 'users.php' );
 				$programs_url    = admin_url( 'edit.php?post_type=program' );
-				$settings_url    = admin_url( 'admin.php?page=wsorder-settings' );
+				$settings_url    = admin_url( 'admin.php?page=tamusorder-settings' );
 				$output          .= "<li><a href=\"$bundles_url\">Bundles</a></li><li><a href=\"$categories_url\">Categories</a></li><li><a href=\"$products_url\">Products</a></li><li><a href=\"$departments_url\">Departments</a></li><li><a href=\"$users_url\">Users</a></li><li><a href=\"$programs_url\">Programs</a></li><li><a href=\"$settings_url\">Settings</a></li>";
 			}
 			$menu = $menu_title . $menu . $output;
@@ -66,17 +66,17 @@ class Navigation {
 
 		if ( 'primary' === $args->theme_location ) {
 			$current_program_id = get_site_option( 'options_current_program' );
-			$orders_url         = admin_url( "edit.php?post_type=wsorder&program=$current_program_id" );
+			$orders_url         = admin_url( "edit.php?post_type=tamusorder&program=$current_program_id" );
 			$menu_title         = "<li class=\"brand\">Administrative Functions</li>";
 			$output             = "<li><a href=\"/orders/\">Orders</a></li>";
-			if ( current_user_can( 'wso_admin' ) || current_user_can( 'wso_logistics' ) || current_user_can( 'wso_logistics_admin' ) ) {
+			if ( current_user_can( 'wso_admin' ) || current_user_can( 'logistics' ) || current_user_can( 'logistics_admin' ) ) {
 				$bundles_url     = admin_url( 'edit.php?post_type=bundle' );
 				$categories_url  = admin_url( 'edit-tags.php?taxonomy=product-category' );
 				$products_url    = admin_url( 'edit.php?post_type=product' );
 				$departments_url = admin_url( 'edit.php?post_type=department' );
 				$users_url       = admin_url( 'users.php' );
 				$programs_url    = admin_url( 'edit.php?post_type=program' );
-				$settings_url    = admin_url( 'admin.php?page=wsorder-settings' );
+				$settings_url    = admin_url( 'admin.php?page=tamusorder-settings' );
 				$output          .= "<li><a href=\"$bundles_url\">Bundles</a></li><li><a href=\"$categories_url\">Categories</a></li><li><a href=\"$products_url\">Products</a></li><li><a href=\"$departments_url\">Departments</a></li><li><a href=\"$users_url\">Users</a></li><li><a href=\"$programs_url\">Programs</a></li><li><a href=\"$settings_url\">Settings</a></li>";
 			}
 			$menu = $menu_title . $menu . $output;
