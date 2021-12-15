@@ -1,21 +1,21 @@
 {
-  "name": "tamus-order",
+  "name": "tamus-order-theme-wp",
   "version": "1.0.0",
-  "description": "Genesis child theme for the College of Liberal Arts Workstation Ordering Application",
+  "description": "Genesis child theme for the Texas A&M University System's Ordering Application",
   "main": "functions.php",
   "scripts": {
     "start": "git config core.hooksPath hooks && npm install && npm run grunt",
-	"start:dev": "git config core.hooksPath hooks && composer install && npm install && npm test && npm run grunt:dev",
+    "start:dev": "git config core.hooksPath hooks && composer install && npm install && npm test && npm run grunt:dev",
     "test": "grunt test",
-	"grunt": "grunt",
-	"grunt:dev": "grunt develop",
+    "grunt": "grunt",
+    "grunt:dev": "grunt develop",
     "checkwp": "phpcs --standard=WordPress --ignore=*/vendor/*,*/node_modules/* --filter=gitmodified .",
     "fixwp": "phpcbf --standard=WordPress --ignore=*/vendor/*,*/node_modules/* --filter=gitmodified ."
   },
   "author": "Zachary Watkins",
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/zachwatkins/tamus-order/issues",
+    "url": "https://github.com/zachwatkins/tamus-order-theme-wp/issues",
     "email": "zwatkins2@tamu.edu"
   },
   "dependencies": {
@@ -23,7 +23,7 @@
     "cssnano": "^4.1.10",
     "foundation-sites": "^6.4.3",
     "grunt": "^1.0.3",
-	"grunt-cli": "~1.4.2",
+    "grunt-cli": "~1.4.2",
     "grunt-contrib-coffee": "^2.0.0",
     "grunt-contrib-compress": "^1.4.3",
     "grunt-contrib-watch": "^1.1.0",
@@ -41,12 +41,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zachwatkins/tamus-order"
+    "url": "https://github.com/zachwatkins/tamus-order-theme-wp"
   },
-  "homepage": "https://github.com/zachwatkins/tamus-order#readme",
+  "homepage": "https://github.com/zachwatkins/tamus-order-theme-wp#readme",
   "org_clait": {
-    "themename": "CLA Workstation Ordering Application",
-    "authoruri": "https://liberalarts.tamu.edu/",
+    "themename": "TAMUS Ordering Application",
+    "authoruri": "https://github.com/zachwatkins/",
     "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
     "template": "genesis"
   },

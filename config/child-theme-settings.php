@@ -1,23 +1,23 @@
 <?php
 /**
- * Workstation Order theme settings.
+ * TAMUS Ordering Application theme settings.
  *
  * Genesis 2.9+ updates these settings when themes are activated.
  *
- * @package Workstation Order
+ * @package TAMUS Workstation Order
  * @author  Zachary K. Watkins <zwatkins2@tamu.edu> (https://github.com/zachwatkins/)
  * @license GPL-2.0-or-later
- * @link    https://github.com/zachwatkins/tamus-order/
+ * @link    https://github.com/zachwatkins/tamus-order-theme-wp/
  */
 
 return [
 	GENESIS_SETTINGS_FIELD                => [
 		'site_layout' => 'full',
-		'footer_text' => '[footer_copyright before="Copyright "] · CLA Workstation Ordering Application <a href="https://github.com/zachwatkins/tamus-order">Theme</a> and <a href="https://github.com/zachwatkins/tamus-order-plugin-wp">Plugin</a> on [footer_genesis_link url="https://www.studiopress.com/" before=""] · [footer_wordpress_link]'
+		'footer_text' => '[footer_copyright before="Copyright "] · TAMUS Ordering Application <a href="https://github.com/zachwatkins/tamus-order">Theme</a> and <a href="https://github.com/zachwatkins/tamus-order-plugin-wp">Plugin</a> on [footer_genesis_link url="https://www.studiopress.com/" before=""] · [footer_wordpress_link]'
 	],
 	'posts_per_page'                      => 6,
 	'blogdescription'                     => '',
-	'blogname'                            => 'Workstation Ordering Application',
+	'blogname'                            => 'TAMUS Ordering Application',
 	'auto_update_core_dev'                => 'enabled',
 	'auto_update_core_minor'              => 'enabled',
 	'options_current_program'             => '2',
