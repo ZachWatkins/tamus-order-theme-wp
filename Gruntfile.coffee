@@ -83,8 +83,8 @@ module.exports = (grunt) ->
   @loadNpmTasks 'grunt-sass'
   @loadNpmTasks 'grunt-postcss'
 
-  @registerTask 'default', ['themecomment', 'sasslint', 'sass:pkg', 'postcss:pkg']
-  @registerTask 'develop', ['themecomment', 'sasslint', 'sass:dev']
+  @registerTask 'default', ['themecomment', 'sass:pkg', 'postcss:pkg']
+  @registerTask 'develop', ['themecomment', 'sasslint', 'sass:dev', 'postcss:dev']
   @registerTask 'test', ['sasslint']
   @registerTask 'release', ['compress', 'makerelease']
   @registerTask 'makerelease', 'Set release branch for use in the release task', ->
@@ -200,18 +200,18 @@ module.exports = (grunt) ->
     scss = 'css/src/_themecomment.scss'
     css = 'style.css'
     options =
-      encoding: 'utf-8'
+      encoding: 'utf-8' 
     output = '/*!\n'
-    output += '  Theme Name:  <%= pkg.org_clait.themename %>\n'
+    output += '  Theme Name:  <%= pkg.org_tamus.themename %>\n'
     output += '  Theme URI:   <%= pkg.repository.url %>\n'
     output += '  Author:      <%= pkg.author %>\n'
-    output += '  Author URI:  <%= pkg.org_clait.authoruri %>\n'
+    output += '  Author URI:  <%= pkg.org_tamus.authoruri %>\n'
     output += '  Description: <%= pkg.description %>\n'
     output += '  Version:     <%= pkg.version %>\n'
     output += '  License:     <%= pkg.license %>\n'
-    output += '  License URI: <%= pkg.org_clait.licenseuri %>\n'
+    output += '  License URI: <%= pkg.org_tamus.licenseuri %>\n'
     output += '  Text Domain: <%= pkg.name %>\n'
-    output += '  Template:    <%= pkg.org_clait.template %>\n'
+    output += '  Template:    <%= pkg.org_tamus.template %>\n'
     output += '*/\n'
     output = grunt.template.process output
     grunt.file.delete scss
