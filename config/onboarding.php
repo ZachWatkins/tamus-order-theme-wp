@@ -55,7 +55,7 @@ return [
 						'public_url' => 'https://wordpress.org/plugins/onelogin-saml-sso/',
 					],
 				],
-				'content'          => require __DIR__ . '/import/content/posts.php',
+				'content'          => [],
 				'navigation_menus' => [
 					'primary' => [
 						'homepage'   => [

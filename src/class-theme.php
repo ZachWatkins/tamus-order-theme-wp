@@ -186,8 +186,8 @@ class Theme {
 	 */
 	public function add_user_switch_back_link() {
 
-		if ( method_exists( 'user_switching', 'get_old_user' ) ) {
-			$old_user = user_switching::get_old_user();
+		if ( class_exists( 'user_switching' ) && method_exists( 'user_switching', 'get_old_user' ) ) {
+			$old_user = \user_switching::get_old_user();
 			if ( $old_user ) {
 				$current_user = wp_get_current_user();
 				$display_name = $current_user->display_name;

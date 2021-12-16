@@ -67,10 +67,12 @@ module.exports = (grunt) ->
           archive: '<%= pkg.name %>.zip'
         files: [
           {src: ['css/*.css']},
+          {src: ['js/*.js']},
           {src: ['src/**']},
-          {src: ['vendor/autoload.php', 'vendor/composer/**']},
           {src: ['*.php']},
-          {src: ['readme.md']},
+          {src: ['package.json']},
+          {src: ['composer.json']},
+          {src: ['README.md']},
           {src: ['style.css']}
         ]
 
