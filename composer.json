@@ -1,6 +1,6 @@
 {
-    "name": "liberalarts-web/tamus-order",
-    "description": "A Genesis child theme for WordPress for ordering workstations for the Texas A&M College of Liberal Arts.",
+    "name": "tamus/order-theme-wp",
+    "description": "A GPL 2.0+ Texas A&M University System ordering application theme using the Genesis framework for WordPress.",
     "license": "GPL-2.0+",
     "authors": [
         {

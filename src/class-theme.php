@@ -43,11 +43,11 @@ class Theme {
 		add_action( 'genesis_onboarding_after_import_content', array( $this, 'onboarding_after_import_content'), 10, 2 );
 
 		// Navigation menu.
-		include CLA_THEME_DIRPATH . '/src/class-navigation.php';
+		include TAMUS_ORDER_THEME_DIRPATH . '/src/class-navigation.php';
 		$nav = new \TAMUS\Order\Theme\Navigation();
 
 		// Header.
-		include CLA_THEME_DIRPATH . '/src/class-header.php';
+		include TAMUS_ORDER_THEME_DIRPATH . '/src/class-header.php';
 		$nav = new \TAMUS\Order\Theme\Header();
 
 		// Run functions after the theme is loaded.
