@@ -2,7 +2,7 @@
 
 $users = array(
 	'wso-admin'           => 'wso_admin',
-	'logistics-admin'     => 'logistics_admin',
+	'logistics-admin'     => 'wso_logistics_admin',
 	'logistics-assistant' => 'logistics_assistant',
 	'business-admin'      => 'business_admin',
 	'it-rep'              => 'it_rep',
