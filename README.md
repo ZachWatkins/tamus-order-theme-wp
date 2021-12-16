@@ -1,8 +1,8 @@
-# Workstation Ordering Application for WordPress
+# TAMUS Ordering Application for WordPress
 
 Texas A&M University System
 
-A GNU GPL 2.0 (or later) WordPress Theme to facilitate product ordering within a robust, multi-role return / approve workflow using team-based settings.
+A GNU GPL 2.0 (or later) WordPress Application in two parts (a [plugin](https://github.com/zachwatkins/tamus-order-plugin-wp) and [theme](https://github.com/zachwatkins/tamus-order-theme-wp)) to facilitate internal ordering needs with a multi-role return / approve workflow using team-based settings.
 
 ## Features
 
