@@ -1,39 +1,48 @@
 # Workstation Ordering Application for WordPress
 
-Web Team > Information Technology > Dean's Office > College of Liberal Arts > Texas A&M University > Texas A&M University System
+Texas A&M University System
 
 A GNU GPL 2.0 (or later) WordPress Theme to facilitate product ordering within a robust, multi-role return / approve workflow using team-based settings.
 
 ## Features
 
 1. Responsive design
-2. HTML5 elements
-3. Accessible
+3. Accessiblev
 
 ## WordPress Requirements
 
 1. WordPress 5.4+ Single site install
-2. [Advanced Custom Fields Pro Plugin](https://www.advancedcustomfields.com/pro/)
-3. [Genesis Framework - WordPress Theme](https://www.studiopress.com/themes/genesis/)
-4. [TAMUS Order Application Genesis Child Theme](https://github.com/zachwatkins/tamus-order-theme-wp)
-5. [TAMUS Order Application Plugin](https://github.com/zachwatkins/tamus-order-plugin-wp)
+2. [Advanced Custom Fields Pro Plugin](https://www.advancedcustomfields.com/pro/) (Activate first)  
+   _Note: Only Administrators have access to this plugin in the dashboard._
+3. [Genesis Theme Framework](https://www.studiopress.com/themes/genesis/)
+5. [TAMUS Order Application Plugin](https://github.com/zachwatkins/tamus-order-plugin-wp) (Activate second)
+4. [TAMUS Order Application Theme](https://github.com/zachwatkins/tamus-order-theme-wp) (Activate third)
 
-## WordPress Recommendations
+## WordPress Plugin Recommendations
 
-1. [OneLogin SAML SSO Plugin](https://wordpress.org/plugins/onelogin-saml-sso/) - for user authentication via Azure Active Directory.
-2. [Post SMTP Plugin](https://wordpress.org/plugins/post-smtp/) - Send emails by SMTP with a logger and one-click resend button in case of failed delivery
-3. [User Switching Plugin](https://github.com/johnbillion/user-switching) - For imitating user accounts in case that is desired functionality. The github.com repository is updated more frequently than the WordPress repository.
-4. [Yoast Duplicate Post Plugin](https://wordpress.org/plugins/duplicate-post/) - Copy custom post types. 
-5. [Simple History Plugin](https://wordpress.org/plugins/simple-history/) - For debugging and user support.
+I highly recommend using the following plugins with this application and have implemented their capability checks and functions where noted.
+
+1. [OneLogin SAML SSO Plugin](https://wordpress.org/plugins/onelogin-saml-sso/)  
+   For user authentication via Azure Active Directory.
+2. [Post SMTP Plugin](https://wordpress.org/plugins/post-smtp/)  
+   Send emails by SMTP with a logger and one-click resend button in case of failed delivery. The capability to view the email log are added to the Logistics Administrator and the WSO Admin. The capability to view the options for this plugin is added to the WSO Admin.
+3. [User Switching Plugin](https://wordpress.org/plugins/user-switching/)  
+   For imitating user accounts in case that is desired functionality. The github.com repository is updated more frequently than the WordPress repository. Links to switch to a user are added on the Order approval page and User list page.
+4. [Yoast Duplicate Post Plugin](https://wordpress.org/plugins/duplicate-post/)  
+   Copy custom post types. Capability to duplicate posts is added to the Logistics Admin and WSO Admin.
+5. [Simple History Plugin](https://wordpress.org/plugins/simple-history/)  
+   For debugging and user support.
 
 # Developer Notes
 
-To get started, download the repository and run `npm start` on Mac and Linux, or `npm run windows-start` on Windows. This will set up the repository for full use "out-of-the-box". For more command line tools see the section below titled **Command Line Tasks**.
+To get started, (1) download the repository, (2) open your terminal, and (3) run `$ npm start`. This will set up the repository for full use "out-of-the-box". For more command line tools see the section below titled **Command Line Tasks**.
 ## Frameworks and Libraries
 
-It relies on Advanced Custom Fields Pro for ease of implementation and modification of data relationships for users and developers. It uses ACF hooks to trigger custom actions when ACF fields are updated.
+It relies on the [Advanced Custom Fields Pro Plugin](https://www.advancedcustomfields.com/pro/) for ease of implementation and modification of data relationships for users and developers. It uses ACF hooks to trigger custom actions when ACF fields are updated.
 
 It uses SASS for CSS preprocessing and Zurb Foundation 6 as a CSS framework.
+
+jQuery is used as well.
 
 ## Code Standards, Guidelines, and Conventions
 
@@ -61,13 +70,26 @@ Links to resources:
 
 ## Command Line Tasks
 
-1. `$ npm start` - Used to initialize the repository; should only be run after downloading the repository for the first time.
-2. `$ npm run checkwp` - Checks the repository's WordPress files against the WordPress Coding Standards and outputs a report into your terminal.
-3. `$ npm run fixwp` - Automatically fixes syntax and whitespace issues with the repository's files according to WordPress Coding Standards.
-4. `$ grunt` - Compile SASS files into compressed, production-ready CSS files.
-5. `$ grunt develop` - Compile SASS files into expanded, sourcemapped CSS files.
-6. `$ grunt watch` - Continuously watch SASS files for changes and compile them into expanded, sourcemapped CSS files every time they are saved.
-7. `$ grunt compress` - Create a compressed package file named `tamus-order-plugin-wp.zip` that can be uploaded to your WordPress website's plugin dashboard.
+1. ```$ npm start```  
+   Used to initialize the repository; should only be run after downloading the repository for the first time.
+
+2. `$ npm run checkwp`  
+   Checks the repository's WordPress files against the WordPress Coding Standards and outputs a report into your terminal.
+
+3. `$ npm run fixwp`  
+   Automatically fixes syntax and whitespace issues with the repository's files according to WordPress Coding Standards.
+
+4. `$ grunt`  
+   Compile SASS files into compressed, production-ready CSS files.
+
+5. `$ grunt develop`  
+   Compile SASS files into expanded, sourcemapped CSS files.
+
+6. `$ grunt watch`  
+   Continuously watch SASS files for changes and compile them into expanded, sourcemapped CSS files every time they are saved.
+
+7. `$ grunt compress`  
+   Create a compressed package file named `tamus-order-plugin-wp.zip` that can be uploaded to your WordPress website's plugin dashboard.
 
 ## To Do
 
@@ -76,25 +98,21 @@ Links to resources:
 3. Consider implementing a custom XML ruleset file for PHP CodeSniffer
 4. Replace NPM package `grunt-sass-lint` with something that isn't abandoned
 
-## Potential Installation Issues
-
-### Windows 10 application issue: "Local" by Flywheel (local virtual server)
-
-[https://localwp.com/help-docs/advanced/router-mode/](https://localwp.com/help-docs/advanced/router-mode/)
-On two different models of Dell Windows 10 machines (Inspiron and Latitude) a Windows service was occupying Port 80 on IP 0.0.0.0:80. This interferes with the "Local" application's router functionality which uses the same port and is not configurable. It is possible that this becomes an issue as a direct result of a change made by the NodeJS *.exe file's installation process since I did not have this issue with the application until after installing NodeJS this way. ON MY PERSONAL COMPUTER I installed NodeJS using Chocolatey CLI and did not experience these conflicts with Port 80 and "Local". NOTE: SEE YOUR SYSTEM ADMINISTRATOR FOR POLICY GUIDANCE REGARDING THE INSTALLATION OF SOFTWARE ON TAMU SYSTEM DEVICES.
+## Known Issue with Local by Flywheel on Windows 10
+[https://localwp.com/help-docs/advanced/router-mode/](https://localwp.com/help-docs/advanced/router-mode/)  On two different models of Dell Windows 10 machines (Inspiron and Latitude) a Windows service was occupying Port 80 on IP 0.0.0.0:80. This interferes with the "Local" application's router functionality which uses the same port and is not configurable. It is possible that this becomes an issue as a direct result of a change made by the NodeJS *.exe file's installation process since I did not have this issue with the application until after installing NodeJS this way. ON MY PERSONAL COMPUTER I installed NodeJS using Chocolatey CLI and did not experience these conflicts with Port 80 and "Local". NOTE: SEE YOUR SYSTEM ADMINISTRATOR FOR POLICY GUIDANCE REGARDING THE INSTALLATION OF SOFTWARE ON TAMU SYSTEM DEVICES.
 
 ## Credits
 
-1. The WordPress plugin was programmed by Zachary Watkins <zwatkins2@tamu.edu> <https://github.com/zachwatkins>.
-2. The WordPress theme was programmed by Zachary Watkins.
-3. The business process workflow and a portion of the UI specifications were designed by Pamela Luckenbill.
-4. The majority of the workflow requirements for this version were preserved from the original application. However, the product, bundle, program, and department data creation and management interface is superseded by this application as it is provided by WordPress Core.
-5. The visual design at the start of the project was copied from the original application, and then the icons were replaced.
+1. Both the TAMUS Ordering Application plugin and theme were programmed by Zachary Kendall Watkins <zwatkins2@tamu.edu> · <https://github.com/zachwatkins>.
+2. The business process workflow and a portion of the UI specifications were designed by Pamela Luckenbill.
+3. The majority of the workflow requirements for this version were preserved from the original application. However, the product, bundle, program, and department data creation and management interface is superseded by this application as it is provided by WordPress Core.
+4. The visual design at the start of the project was copied from the original application, and then the icons were replaced.
 
 ## Original Application Credits
 
-1. The original application used very different technology, was programmed by Joseph Rafferty <jrafferty@tamu.edu>, and was authored by Joseph Rafferty and Pamela Luckenbill: <https://github.tamu.edu/liberalarts-web/tamus-workstation-order>.
+1. The original application used very different technology, was programmed by Joseph Rafferty <jrafferty@tamu.edu>, and was authored by Joseph Rafferty and Pamela Luckenbill: <https://github.tamu.edu/liberalarts-web/cla-workstation-order>.
 
-## Footnotes
+## Final Notes
 
-To add an executable file to git version control, do this: `git add --chmod=+x hooks/pre-commit && git commit -m "Add pre-commit executable hook"`
+To add an executable file to git version control:  
+`$ git add --chmod=+x hooks/pre-commit && git commit -m "Add pre-commit executable hook"`
