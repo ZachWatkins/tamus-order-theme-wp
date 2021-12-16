@@ -24,7 +24,7 @@ return [
 	'_options_current_program'            => 'field_60099c44333b3',
 	'options_unfunded_program'            => '3',
 	'_options_unfunded_program'           => 'field_60bf90684b119',
-	'options_logistics_email'             => 'logistics-admin@wso.local',
+	'options_logistics_email'             => 'logistics-admin@' . $_SERVER['HTTP_HOST'],
 	'_options_logistics_email'            => 'field_601da56c35bfe',
 	'options_enable_emails_to_logistics'  => '1',
 	'_options_enable_emails_to_logistics' => 'field_601da63a35bff',

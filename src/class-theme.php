@@ -40,6 +40,8 @@ class Theme {
 	 */
 	private function __construct() {
 
+		add_action( 'genesis_onboarding_after_import_content', array( $this, 'onboarding_after_import_content'), 10, 2 );
+
 		// Navigation menu.
 		include CLA_THEME_DIRPATH . '/src/class-navigation.php';
 		$nav = new \TAMUS\Order\Theme\Navigation();
@@ -67,6 +69,23 @@ class Theme {
 
 		// Disable the admin bar.
 		add_action('after_setup_theme', array( $this, 'admin_bar_enable_or_disable' ) );
+
+	}
+
+	/**
+	 * Runs code after content is imported during theme setup.
+	 * Create default set of demo users when the theme is activated and the users don't exist.
+	 * 
+	 * @since 1.1.0
+	 * 
+	 * @param array $content           The content data from the `onboarding.php` file.
+	 * @param array $imported_post_ids Content keys and created post IDs. Example: `[ "homepage" => 123 ]`.
+	 * 
+	 * @return void
+	 */
+	public function onboarding_after_import_content( $content, $imported_post_ids ) {
+		
+		require_once dirname( __FILE__, 2 ) . '/config/import/data/users.php';
 
 	}
 
