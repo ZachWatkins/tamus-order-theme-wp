@@ -7,11 +7,11 @@
  * Template Name: My Account
  *
  * @since      1.0.0
- * @package    WSOrder
+ * @package    TAMUS Order
  * @subpackage Page Templates
  * @author     Zachary Watkins <zwatkins2@tamu.edu>
  * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @link       https://github.com/ZachWatkins/tamus-order/tree/master/page-templates/page-my-account.php
+ * @link       https://github.com/zachwatkins/tamus-order-theme-wp/tree/master/page-templates/page-my-account.php
  */
 
 /**
@@ -100,14 +100,14 @@ function tamus_my_account() {
 	$lastname      = $user_meta['last_name'][0];
 	$email         = $user->user_email;
 	$department_dd = get_department_dropdown();
-	$output        .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><span>Username</span></div><div class=\"cell small-10\"><span class=\"text-input\">$username</span></div></div>";
-	$output        .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_first_name\">First Name</label></div><div class=\"cell small-10\"><input type=\"text\" value=\"$firstname\" name=\"tamus_first_name\" id=\"tamus_first_name\" /></div></div>";
-	$output        .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_last_name\">Last Name</label></div><div class=\"cell small-10\"><input type=\"text\" value=\"$lastname\" name=\"tamus_last_name\" id=\"tamus_last_name\" /></div></div>";
-	$output        .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_email\">Email</label></div><div class=\"cell small-10\"><input type=\"text\" value=\"$email\" name=\"tamus_email\" id=\"tamus_email\" /></div></div>";
-	$output        .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_department\">Department</label></div><div class=\"cell small-10\">$department_dd</div></div>";
-	$output        .= "<hr />";
-	$output        .= "<div class=\"grid-x align-middle grid-margin-x\"><div class=\"cell auto text-right\"><div class=\"ajax-response\"></div></div><div class=\"cell shrink\"><button type=\"button\" name=\"tamus_update_account\" id=\"tamus_update_account\" class=\"btn btn-primary\">Looks Good <span class=\"dashicons dashicons-thumbs-up\"></span></button></div></div>";
-	$output        .= "</form>";
+	$output       .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><span>Username</span></div><div class=\"cell small-10\"><span class=\"text-input\">$username</span></div></div>";
+	$output       .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_first_name\">First Name</label></div><div class=\"cell small-10\"><input type=\"text\" value=\"$firstname\" name=\"tamus_first_name\" id=\"tamus_first_name\" /></div></div>";
+	$output       .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_last_name\">Last Name</label></div><div class=\"cell small-10\"><input type=\"text\" value=\"$lastname\" name=\"tamus_last_name\" id=\"tamus_last_name\" /></div></div>";
+	$output       .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_email\">Email</label></div><div class=\"cell small-10\"><input type=\"text\" value=\"$email\" name=\"tamus_email\" id=\"tamus_email\" /></div></div>";
+	$output       .= "<div class=\"grid-x p align-middle grid-margin-x\"><div class=\"cell small-2\"><label for=\"tamus_department\">Department</label></div><div class=\"cell small-10\">$department_dd</div></div>";
+	$output       .= '<hr />';
+	$output       .= "<div class=\"grid-x align-middle grid-margin-x\"><div class=\"cell auto text-right\"><div class=\"ajax-response\"></div></div><div class=\"cell shrink\"><button type=\"button\" name=\"tamus_update_account\" id=\"tamus_update_account\" class=\"btn btn-primary\">Looks Good <span class=\"dashicons dashicons-thumbs-up\"></span></button></div></div>";
+	$output       .= '</form>';
 	echo $output;
 }
 

@@ -2,7 +2,7 @@
 /**
  * The file that defines the core theme class
  *
- * @link       https://https://github.com/zachwatkins/tamus-order/blob/master/src/class-tamus-order.php
+ * @link       https://https://github.com/zachwatkins/tamus-order-theme-wp/blob/master/src/class-tamus-order.php
  * @since      0.1.0
  * @package    tamus-order
  * @subpackage tamus-order/src
@@ -75,16 +75,16 @@ class Theme {
 	/**
 	 * Runs code after content is imported during theme setup.
 	 * Create default set of demo users when the theme is activated and the users don't exist.
-	 * 
+	 *
 	 * @since 1.1.0
-	 * 
+	 *
 	 * @param array $content           The content data from the `onboarding.php` file.
 	 * @param array $imported_post_ids Content keys and created post IDs. Example: `[ "homepage" => 123 ]`.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function onboarding_after_import_content( $content, $imported_post_ids ) {
-		
+
 		require_once dirname( __FILE__, 2 ) . '/config/import/data/users.php';
 
 	}
@@ -192,10 +192,11 @@ class Theme {
 				$current_user = wp_get_current_user();
 				$display_name = $current_user->display_name;
 				$back_url     = esc_url( \user_switching::switch_back_url( $old_user ) );
-				$uri          = $_SERVER['REQUEST_URI'];
+				$uri          = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+				$host         = isset( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : '';
 				$protocol     = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? "https://" : "http://";
-				$redirect     = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?user_switched=true';
-				$redirect     = urlencode( $redirect );
+				$redirect     = $protocol . $host . $uri . '?user_switched=true';
+				$redirect     = rawurlencode( $redirect );
 				$back_name    = esc_html( $old_user->display_name );
 				echo wp_kses_post( "<div class=\"alert alert-info\">Impersonating: $display_name. <a href=\"{$back_url}&redirect_to={$redirect}\">Back to $back_name</a></div>" );
 			}
@@ -248,7 +249,6 @@ class Theme {
 			'width'       => 50,
 			'flex-height' => true,
 			'flex-width'  => true,
-			// 'header-text' => array( 'site-title', 'site-description' ),
 		);
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'responsive-embeds' );

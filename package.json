@@ -4,8 +4,8 @@
   "description": "Genesis child theme for the Texas A&M University System's Ordering Application",
   "main": "functions.php",
   "scripts": {
-    "start": "git config core.hooksPath hooks && npm install && npm run grunt",
-    "start:dev": "git config core.hooksPath hooks && composer install && npm install && npm test && npm run grunt:dev",
+    "start": "git config core.hooksPath githooks && npm install && npm run grunt",
+    "start:dev": "git config core.hooksPath githooks && composer install && npm install && npm test && npm run grunt:dev",
     "test": "grunt test",
     "grunt": "grunt",
     "grunt:dev": "grunt develop",
