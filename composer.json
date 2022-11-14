@@ -33,11 +33,12 @@
     "install-codestandards": [
       "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
     ],
-    "format": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=vendor,node_modules",
+    "format": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=vendor,node_modules,.vscode",
     "format:modified": "@format --filter=gitmodified",
-    "lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=vendor,node_modules",
+    "lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=vendor,node_modules,.vscode",
     "lint:errors": "@lint -n",
-    "lint:modified": "@lint --filter=gitmodified"
+    "lint:modified": "@lint --filter=gitmodified",
+	"lint:precommit": "@lint --filter=gitstaged ."
   },
   "config": {
     "preferred-install": "dist",

@@ -10,7 +10,7 @@ if [[ -z $WPFILES ]]
 then
 	echo ""
 else
-	wplint=`vendor/bin/phpcs --standard=WordPress --ignore=*/vendor/*,*/node_modules/*,*/backup/*,*/.vscode/*, --filter="gitstaged" .`
+	wplint=`composer run lint:precommit`
 
 	echo "$wplint"
 
